@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>Github info fetcher</title>
+    <title>Github info fe</title>
     <link rel="stylesheet" href="style.css">
     <script>
     document.write('<base href="' + document.location + '" />');
@@ -17,12 +17,13 @@
   <body ng-controller="GithubController">
     <div class="container">
     <div class="jumbo">{{limit}} Repos for: <strong>{{username}}</strong></div>
+    <div class="jumbo-mini">Search for Github user: <input type="text" name="fname"></div>
     <ul ng-repeat="repo in repos | limitTo: limit">
       <li>
         <div>
-          <a class="repolink" ng-click="getCommits(repo)"> {{repo.name}} </a>
-          <span class="button" ng-click="repo.showcommits = false" ng-show="repo.commits.length > 0 && repo.showcommits == true">+</span>
-          <span class="button" ng-click="repo.showcommits = true" ng-show="repo.commits.length > 0 && repo.showcommits == false">-</span>
+          <a class="repolink" ng-click="getCommits(repo); repo.showcommits = true" > {{repo.name}} </a>
+          <span class="button" ng-click="repo.showcommits = false" ng-show="repo.commits.length > 0 && repo.showcommits == true">-</span>
+          <span class="button" ng-click="repo.showcommits = true" ng-show="repo.commits.length > 0 && repo.showcommits == false">+</span>
           <div class="well" ng-show="repo.showcommits == true">
             <ul>
               <li ng-repeat="commit in repo.commits">

@@ -1,7 +1,12 @@
 .button {
-  min-height: 50px;
-  min-width: 50px;
   font-size: 20px;
+  background-color: #B2EBF2;
+  height: 100%;
+  padding: 20px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #80DEEA;
 }
 
 .open-content{
@@ -17,19 +22,37 @@
   color: white;
 }
 
+.jumbo-mini {
+  margin-top: 20px;
+  background-color: #00ACC1;
+  padding: 30px 20px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.jumbo-mini input {
+  height: 25px;
+  line-height: 20px;
+  font-size: 20px;
+}
 p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
 a {
-  background-color: #B2EBF2;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  padding: 20px;
 }
 
-a:hover {
+.repolink {
+  width: 50%;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #B2EBF2;
+}
+
+.repolink:hover {
   cursor: pointer;
   background-color: #80DEEA;
 }
