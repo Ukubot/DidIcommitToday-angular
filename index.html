@@ -3,31 +3,30 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>AngularJS Plunker</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Github info fetcher</title>
+    <link rel="stylesheet" href="style.css">
     <script>
     document.write('<base href="' + document.location + '" />');
   </script>
     <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.2.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" data-semver="1.2.16"></script>
     <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script data-require="bootstrap@*" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
   </head>
 
   <body ng-controller="GithubController">
     <div class="container">
-    <div class="jumbotron">{{limit}} Repos for: <strong>{{username}}</strong></div>
+    <div class="jumbo">{{limit}} Repos for: <strong>{{username}}</strong></div>
     <ul ng-repeat="repo in repos | limitTo: limit">
       <li>
         <div>
-          <a ng-click="getCommits(repo)"> {{repo.name}} </a>
-          <span class="glyphicon glyphicon-minus" ng-click="repo.showcommits = false" ng-show="repo.commits.length > 0 && repo.showcommits == true"></span>
-          <span class="glyphicon glyphicon-plus" ng-click="repo.showcommits = true" ng-show="repo.commits.length > 0 && repo.showcommits == false"></span>
+          <a class="repolink" ng-click="getCommits(repo)"> {{repo.name}} </a>
+          <span class="button" ng-click="repo.showcommits = false" ng-show="repo.commits.length > 0 && repo.showcommits == true">+</span>
+          <span class="button" ng-click="repo.showcommits = true" ng-show="repo.commits.length > 0 && repo.showcommits == false">-</span>
           <div class="well" ng-show="repo.showcommits == true">
             <ul>
               <li ng-repeat="commit in repo.commits">
-                <div><pre>{{commit | json}}</pre></div>
+                <div><pre class="open-content">{{commit | json}}</pre></div>
               </li>
             </ul>
           </div>
