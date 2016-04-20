@@ -12,6 +12,8 @@
 .open-content{
   font-size: 14px;
   text-align: left;
+  background-color: #E0F7FA;
+  overflow: auto;
 }
 
 .jumbo {
